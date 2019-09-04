@@ -6,5 +6,5 @@ This repo contains the minimal implementation of active infernce to control the 
 The control is going to be in the joint space using torque commands and position/velocity sensors.
 
 "AICpanda.cpp" makes the robot move to a desired goal. 
-"AICpandapickplace" makes the robot perform a cycle which will be complited with the pick and place of objects later on.
+"AICpandapickplace" makes the robot perform a cycle which will be completed with the pick and place of objects later on.
 
