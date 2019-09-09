@@ -166,7 +166,5 @@ int main(int argc, char** argv) {
   std::cout << e.what() << std::endl;
      return -1;
    }
-  // Add here the variables to save them in a file (time, jointPos and jointVel, and u, pre-allocate variables)
-  // TBD
   return 0;
 }
