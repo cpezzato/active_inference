@@ -67,9 +67,6 @@ int main(int argc, char** argv) {
    // Variances associated with the beliefs and the sensory inputs
    var_mu = 5.0;
    var_muprime = 10.0;
-   // For no gravity use these
-   //var_mu = 15.0;
-   //var_muprime = 30.0;
    var_q = 1;
    var_qdot = 1;
 
