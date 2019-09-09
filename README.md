@@ -9,5 +9,5 @@ The control is going to be in the joint space using torque commands and position
 "AICpanda.cpp" makes the robot move to a desired goal. 
 "AICpandapickplace" makes the robot perform a cycle which will be completed with the pick and place of objects later on.
 
-#### ROS implementation
+### ROS implementation
 The repository also contains a ROS package to use the ROS infrasctucture to control the Panda. The package should be installed within franka_ros (https://github.com/frankaemika/franka_ros)
