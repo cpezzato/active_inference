@@ -1,7 +1,17 @@
 // Copyright (c) 2017 Franka Emika GmbH
 // Use of this source code is governed by the Apache-2.0 license, see LICENSE
 
-// Modified version for active inference
+/*
+* Modified version for active inference
+*
+* Author: Corrado Pezzato
+* Date 09-09-2019
+*
+* This script implements a model reference adaptive controller for the Panda Franka
+* Emika through the ROS framework.
+*
+*/
+
 #include <franka_custom_controllers/MRAC_controller.h>
 #include <cmath>
 #include <controller_interface/controller_base.h>

@@ -5,14 +5,10 @@
  * File:   MRACcontroller.h
  * Author: Corrado Pezzato, TU Delft, DCSC
  *
- * Created on September 6th, 2019
+ * Created on September 5th, 2019
  *
- * Class to perform active inference control of the 7DOF Franka Emika Panda robot.
- *
- * This class takes care of everything, it perfoms free-energy minimization
- * using gradient descent updating the beliefs about the rosbot's states
- * (i.e. joint values) and computing the control actions. The control
- * is in joint space.
+ * Header file for the model reference class. Definition of the variables for
+ * the MRAC for the real Franka Emika Panda robot arm
  *
  */
 

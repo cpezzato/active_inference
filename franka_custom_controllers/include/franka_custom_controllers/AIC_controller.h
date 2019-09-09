@@ -7,12 +7,8 @@
  *
  * Created on September 5th, 2019
  *
- * Class to perform active inference control of the 7DOF Franka Emika Panda robot.
- *
- * This class takes care of everything, it perfoms free-energy minimization
- * using gradient descent updating the beliefs about the rosbot's states
- * (i.e. joint values) and computing the control actions. The control
- * is in joint space.
+ * Header file for the active inference class. Definition of the variables for
+ * the AIC for the real Franka Emika Panda robot arm
  *
  */
 
