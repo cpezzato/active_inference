@@ -11,3 +11,6 @@ The control is going to be in the joint space using torque commands and position
 
 ### ROS implementation
 The repository also contains a ROS package to use the ROS infrasctucture to control the Panda. The package should be installed within franka_ros (https://github.com/frankaemika/franka_ros)
+
+### Video
+A video clip showing a comparison between a model reference adaptive controller (MRAC) and the novel active inference controller (AIC) is available at https://www.youtube.com/watch?v=fSmm3xP5yMw&feature=youtu.be
