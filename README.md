@@ -1,7 +1,5 @@
 # Active_inference
-This repository contains the C++ implementation of active inference for robot control. For simulation purposes, this repo can be handy instead:
-
-https://github.com/cpezzato/panda_simulation
+This repository contains the C++ implementation of active inference for robot control. For simulation purposes, this repo can be handy instead https://github.com/cpezzato/panda_simulation
 
 ### How to cite this work
 This package was developed to support the theoretical results of this work:
