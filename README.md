@@ -2,7 +2,7 @@
 This repository contains the C++ implementation of active inference for robot control.
 
 ### How to cite this work
-This simulation was developed to support the theoretical results of this work:
+This package was developed to support the theoretical results of this work:
 
 - Pezzato C., Ferrari, R., Henrandez C., *A Novel Adaptive Controller for Robot Manipulators Based on Active Inference*, IEEE Robotics and Automation Letters, 2020. 
 
