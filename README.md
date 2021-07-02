@@ -19,5 +19,5 @@ or for the unbiased:
 `roslaunch franka_custom_controllers uAIC_controller.launch robot_ip:=YOURIP (i.e. 172.16.0.2)`
 
 ### Expected behavior
-The robot will initially move to a central position, then wait for joint space goals to be published in the topic */franka_arm/AIC_controller/armGoalMultiArray*.
+The robot will initially move to a central position, then wait for joint space goals to be published in the topic */GoalPositions*.
 

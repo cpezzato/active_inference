@@ -22,7 +22,7 @@ bool uAICController::init(hardware_interface::RobotHW* robot_hw,
   std::vector<std::string> joint_names;
   std::string arm_id;
 
-  goal_mu_dSub = node_handle.subscribe("/franka_arm/AIC_controller/armGoalMultiArray", 5, &uAICController::setGoalMuDCallback, this);
+  goal_mu_dSub = node_handle.subscribe("/GoalPositions", 5, &uAICController::setGoalMuDCallback, this);
 
   ROS_WARN(
       "uAICController: Ready to start the magic?!");
