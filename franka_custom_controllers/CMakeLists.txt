@@ -53,6 +53,7 @@ catkin_package(
 
 add_library(franka_custom_controllers
   src/AIC_controller.cpp
+  src/uAIC_controller.cpp
   src/MRAC_controller.cpp
 )
 

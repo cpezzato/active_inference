@@ -4,6 +4,11 @@
       An active inference controller.
     </description>
   </class>
+<class name="franka_custom_controllers/uAICController" type="franka_custom_controllers::uAICController" base_class_type="controller_interface::ControllerBase">
+    <description>
+      An unbiased active inference controller.
+    </description>
+  </class>
   <class name="franka_custom_controllers/MRACController" type="franka_custom_controllers::MRACController" base_class_type="controller_interface::ControllerBase">
     <description>
       A model reference adaptive controller.

@@ -2,18 +2,8 @@
 // Use of this source code is governed by the Apache-2.0 license, see LICENSE
 
 /*
- * File:   AICcontroller.h
+ * File:   uAICcontroller.h
  * Author: Corrado Pezzato, TU Delft, DCSC
- *
- * Created on September 5th, 2019
- * Last modified 16-06-2021
- *
- * Class to perform active inference control of the 7DOF Franka Emika Panda robot.
- *
- * This class takes care of everything, it perfoms free-energy minimization
- * using gradient descent updating the beliefs about the rosbot's states
- * (i.e. joint values) and computing the control actions. The control
- * is in joint space.
  *
  */
 
@@ -39,7 +29,7 @@
 
 namespace franka_custom_controllers {
 
-class AICController : public controller_interface::MultiInterfaceController<
+class uAICController : public controller_interface::MultiInterfaceController<
                                    franka_hw::FrankaModelInterface,
                                    hardware_interface::EffortJointInterface,
                                    franka_hw::FrankaStateInterface> {
@@ -55,18 +45,22 @@ class AICController : public controller_interface::MultiInterfaceController<
   std::unique_ptr<franka_hw::FrankaModelHandle> model_handle_;
   std::unique_ptr<franka_hw::FrankaStateHandle> state_handle_;
   std::vector<hardware_interface::JointHandle> joint_handles_;
+
   Eigen::Matrix<double, 7, 1> desired_q;
   // Define variables for the controller
   // Variances for internal belief and sensory input, learning rates, integration step
-  double var_q, var_qdot, var_mu, var_muprime, k_mu, k_a, h;
-  // Dummy variable for quick fix tuning
-  double uSix_dummy, uFive_dummy;
+  double var_q, var_qdot, var_mu, var_muprime, k_mu, h;
+  // Controller parameters, PID like control law. Diagonal matrices
+  Eigen::Matrix<double, 7, 7> K_p, K_i, K_d;
+
   // Precision matrices, diagonal matrices with the inverce of the variance
   Eigen::Matrix<double, 7, 7> SigmaP_yq0, SigmaP_yq1, SigmaP_mu, SigmaP_muprime;
   // Belief about the states and their derivatives mu, mu', mu'', joint states, desired value, control
-  Eigen::Matrix<double, 7, 1> mu, mu_p, mu_pp, mu_dot, mu_dot_p, mu_dot_pp, jointPos, jointVel, mu_d, u;
-
-  ros::Subscriber goalSub;
+  Eigen::Matrix<double, 7, 1> mu, mu_p, mu_pp, mu_dot, mu_dot_p, mu_dot_pp, jointPos, jointVel, mu_d, u, mu_past, mu_p_past, I_gain, mu_p_d;
+  // Via-points
+  Eigen::Matrix<double, 7, 1>  mu_d_prePush;
+  // Parameters for control law, to populate the gain matrices
+  double  k_p, k_d, k_i;
   ros::Subscriber goal_mu_dSub;
 };
 
