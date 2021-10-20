@@ -21,3 +21,9 @@ The repository also contains a ROS package to use the ROS infrasctucture to cont
 
 ### Video
 A video clip showing a comparison between a model reference adaptive controller (MRAC) and the novel active inference controller (AIC) is available at https://youtu.be/Vsb0MzOp_TY
+
+## Troubleshooting
+
+The controller might need re-tuning to avoid some jitter or reduece overshoot for specific applications with ecrtain grippers. This is because the dynamics migth differ too much from real setup to real setup. Single tuning of the control parameters per-joint leads to better responses. As an example, tuning parameters such as learning rates and variances of the last joint(s) might need to be reduced to avoid jittering.  
+
+

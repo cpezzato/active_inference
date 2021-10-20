@@ -108,11 +108,11 @@ void AICController::starting(const ros::Time& /*time*/) {
 
   //////////// Controller tuning //////////////
   // Variances associated with the beliefs and the sensory inputs
-  var_mu = 5.0;
-  var_muprime = 10.0;
+  //var_mu = 5.0;
+  //var_muprime = 10.0;
   // For no gravity use these
-  //var_mu = 15.0;
-  //var_muprime = 30.0;
+  var_mu = 15.0;
+  var_muprime = 30.0;
   var_q = 1;
   var_qdot = 1;
 
@@ -140,6 +140,17 @@ void AICController::starting(const ros::Time& /*time*/) {
     jointPos(i) = robot_state.q[i];
     jointVel(i) = robot_state.dq[i];
   }
+
+  // Re-tunin of last joints to have less jitter, another equivalent approach is to have a vector for k_a
+  SigmaP_yq0(4,4) = 0.1*1/var_q;
+  SigmaP_yq1(4,4) = 0.1*1/var_qdot;
+
+  SigmaP_yq0(5,5) = 0.05*1/var_q;
+  SigmaP_yq1(5,5) = 0.05*1/var_qdot;
+
+  SigmaP_yq0(6,6) = 0.01*1/var_q;
+  SigmaP_yq1(6,6) = 0.01*1/var_qdot;
+
   // Initial belief
   mu = jointPos;
   mu_p = jointVel;
